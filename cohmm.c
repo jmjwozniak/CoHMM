@@ -1211,7 +1211,7 @@ void epilogue(int xp){
 int main(int argc, char **argv) {
     int i,j;
     if(argc != 2){
-      fprintf(stderr, "usage: ./cohmm <input file> <number>\n");
+      fprintf(stderr, "usage: ./cohmm <input file number>\n");
       return 1;
     }
     int xp=atoi(argv[1]);
