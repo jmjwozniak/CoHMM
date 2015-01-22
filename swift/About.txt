@@ -1,5 +1,6 @@
 
 = Swift/CoMD Package
+Justin M. Wozniak <wozniak@mcs.anl.gov>
 
 ////
 This may be processed with asciidoc to produce About.html
