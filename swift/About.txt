@@ -42,3 +42,12 @@ to see the list of currently available CoMD functions.
 +test-comd-lib-swift.sh+:: Runs +test-comd-lib.swift+.
 +scan.tcl+:: Scans the CoMD package for SWIG-generated Tcl functions.
 +scan.sh+:: Runs +scan.tcl+.
+
+== Swift scripts
+
+=== test-comd-lib.swift
+
+[source,c,numbered]
+----
+include::test-comd-lib.swift[]
+----
