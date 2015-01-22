@@ -1,0 +1,11 @@
+
+== File index
+
+* Makefile: Builds Tcl package.  Links against libCoMD.
+* comd.i: SWIG interface file. Builds script language bindings for CoMD.
+* make-package.tcl: Standard Tcl package-building script.
+* test-comd.tcl: Test that the CoMD Tcl package works.
+* test-comd-tcl.sh: Runs test-comd.tcl .
+* comd.swift: Swift header for call to CoMD Tcl function.
+* test-comd-lib.swift: Calls CoMD lib once from Swift.  Imports comd.swift.
+* test-comd-lib-swift.sh: Runs test-comd-lib.swift .
