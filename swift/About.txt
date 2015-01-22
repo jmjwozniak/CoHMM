@@ -16,8 +16,8 @@ tests to check that the package works.
 . Change into this directory (+swift/+)
 . Edit +Makefile+ to set the Tcl location
 . Run +make+
-. Run +./test-comd-tcl.sh+ .  This calls CoMD from Tcl once, producing a stressXX.
-. Run +./test-comd-lib.swift+ .  This calls CoMD from Swift once, producing a stressXX.
+. Run +./test-comd-tcl.sh+ .  This calls CoMD from Tcl once, producing a +stressXX+.
+. Run +./test-comd-lib.swift+ .  This calls CoMD from Swift once, producing a +stressXX+.
 
 == File index
 
