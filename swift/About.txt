@@ -1,11 +1,31 @@
 
+= Swift/CoMD Package
+
+////
+This may be processed with asciidoc to produce About.html
+$ asciidoc About.txt
+////
+
+== Overview
+
+These scripts build a package compatible with Swift/T, and provide
+tests to check that the package works.
+
+== Usage
+
+. Change into this directory (+swift/+)
+. Edit +Makefile+ to set the Tcl location
+. Run +make+
+. Run +./test-comd-tcl.sh+ .  This calls CoMD from Tcl once, producing a stressXX.
+. Run +./test-comd-lib.swift+ .  This calls CoMD from Swift once, producing a stressXX.
+
 == File index
 
-* Makefile: Builds Tcl package.  Links against libCoMD.
-* comd.i: SWIG interface file. Builds script language bindings for CoMD.
-* make-package.tcl: Standard Tcl package-building script.
-* test-comd.tcl: Test that the CoMD Tcl package works.
-* test-comd-tcl.sh: Runs test-comd.tcl .
-* comd.swift: Swift header for call to CoMD Tcl function.
-* test-comd-lib.swift: Calls CoMD lib once from Swift.  Imports comd.swift.
-* test-comd-lib-swift.sh: Runs test-comd-lib.swift .
++Makefile+:: Builds Tcl package.  Links against libCoMD.
++comd.i+:: SWIG interface file. Builds script language bindings for CoMD.
++make-package.tcl+:: Standard Tcl package-building script.
++test-comd.tcl+:: Test that the CoMD Tcl package works.
++test-comd-tcl.sh+:: Runs +test-comd.tcl+ .
++comd.swift+:: Swift header for call to CoMD Tcl function.
++test-comd-lib.swift+:: Calls CoMD lib once from Swift.  Imports +comd.swift+.
++test-comd-lib-swift.sh+:: Runs +test-comd-lib.swift+ .
