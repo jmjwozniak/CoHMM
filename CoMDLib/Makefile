@@ -16,11 +16,16 @@ DO_MPI = OFF
 ### own.  If you need any -L or -l switches to get C standard libraries
 ### (such as -lm for the math library) put them in C_LIB.
 CC = cc # mpicc
-CFLAGS = -std=c99
 OPTFLAGS = -g -O3
 INCLUDES = 
 C_LIB = -lm
-
+ifneq ($(SO),1)
+	PIC = 
+else
+	PIC = -fPIC
+endif
+SHARED = -shared
+CFLAGS = -std=c99 $(PIC)
 
 ### If you need to specify include paths, library paths, or link flags
 ### for MPI, put them here.  Put both -L and -l switches into MPI_LIB.
@@ -77,6 +82,10 @@ DEFAULT: libCoMD.a
 libCoMD.a: CoMD_info.h ${OBJECTS} 
 	ar rcs libCoMD.a ${OBJECTS}
 #	${CC} ${CFLAGS} -o CoMDParallel ${OBJECTS} ${LDFLAGS}
+
+libCoMD.so: ${OBJECTS} 
+	${CC} $(SHARED) $(PIC) -o $(@) \
+              ${OBJECTS}
 
 CoMD_info.h: Makefile
 	./generate_info_header "$(CC)" "$(CFLAGS)" "$(LDFLAGS)"
