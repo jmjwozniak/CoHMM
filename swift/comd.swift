@@ -19,6 +19,25 @@
   float defGrad       //!< deformation gradient == 1,1 component of the strain tensor
                        ) "comd" "0.0"
 [
-  // Currently fails - no args
-  "set <<stressXX>> [ CoMD_lib ] "
+----
+set input [ new_CoMD_input ]
+CoMD_input_potDir_set $input <<potDir>>
+CoMD_input_potName_set $input <<potName>>
+CoMD_input_potType_set $input <<potType>>
+CoMD_input_doeam_set $input <<doeam>>
+CoMD_input_nx_set $input <<nx>>
+CoMD_input_ny_set $input <<ny>>
+CoMD_input_nz_set $input <<nz>>
+CoMD_input_nSteps_set $input <<nSteps>>
+CoMD_input_printRate_set $input <<printRate>>
+CoMD_input_dt_set $input <<dt>>
+CoMD_input_lat_set $input <<lat>>
+CoMD_input_energy_set $input <<energy>>
+CoMD_input_initialDelta_set $input <<initialDelta>>
+CoMD_input_defGrad_set $input <<defGrad>>
+CoMD_input_temperature_set $input <<temperature>>
+
+set result [ CoMD_lib $input ]
+set <<stressXX>> [ CoMD_return_stressXX_get $result ]
+----
 ];
